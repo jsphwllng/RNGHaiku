@@ -1,0 +1,9 @@
+Requirements for RNGhaiku.py:
+
+modules:
+random
+tweepy
+datetime
+
+external:
+twitter API and twitter account
