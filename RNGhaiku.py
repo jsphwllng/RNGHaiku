@@ -313,3 +313,5 @@ except:
 def publictweet():
 
     api.update_status(completedhaiku)
+
+publictweet()
