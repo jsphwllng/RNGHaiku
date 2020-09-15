@@ -41,7 +41,7 @@ def tweet_haiku():
 
 	completed_haiku = first_line + "\n    " + second_line + "\n" + third_line
 
-	print(completed_haiku)
+	print("haiku tweeted")
 
 	consumer_key = creds.consumer_key
 	consumer_secret = creds.consumer_secret
