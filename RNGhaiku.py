@@ -33,30 +33,32 @@ def make_haiku(allowed_syllables):
 			count += syllable_count(chosen_word)
 	return haiku
 
-first_line = make_haiku(5)
-second_line = make_haiku(7)
-third_line = make_haiku(5)
+def tweet_haiku():
 
-completed_haiku = first_line + "\n    " + second_line + "\n" + third_line
+	first_line = make_haiku(5)
+	second_line = make_haiku(7)
+	third_line = make_haiku(5)
 
-print(completed_haiku)
+	completed_haiku = first_line + "\n    " + second_line + "\n" + third_line
 
-consumer_key = creds.consumer_key
-consumer_secret = creds.consumer_secret
-access_token = creds.access_token
-access_token_secret = creds.access_token_secret
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+	print(completed_haiku)
 
-try:
-    api.verify_credentials()
-    print("Authentication OK")
-except:
-    print("Error during authentication")
+	consumer_key = "moSinewNqmGJ6Sq8oVUPCPcsa"
+	consumer_secret = "C6Dl8LF5L6ZCX4jqT4BrY1V7OlLrkeZ07U32ZceGlv02yVtOgt"
+	access_token = "1250184561050423302-lCSbevposK3tFo0SAU2jRkQZ3ROBa4"
+	access_token_secret = "q9vGQSDrykrabHOjhSj1AuXzx9qWqoeGbSloMZIdsdDxm"
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth.set_access_token(access_token, access_token_secret)
+	api = tweepy.API(auth)
 
-def publictweet():
+	try:
+	    api.verify_credentials()
+	    print("Authentication OK")
+	except:
+	    print("Error during authentication")
 
-    api.update_status(completed_haiku)
+	def publictweet():
 
-publictweet()
+	    api.update_status(completed_haiku)
+
+	publictweet()
