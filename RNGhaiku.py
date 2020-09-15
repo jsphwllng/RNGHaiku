@@ -1,7 +1,6 @@
 import random
 import tweepy
 from words import words
-import creds
 
 def syllable_count(word):
 	word = word.lower()
