@@ -5,8 +5,8 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 sched = BlockingScheduler()
 
-# Schedule job_function to be called every two hours
-sched.add_job(tweet_haiku, 'interval', seconds=30)
-sched.add_job(talent_scout, 'interval', seconds=30)
+# Schedule job_function to be called every three hours
+sched.add_job(tweet_haiku, 'interval', hours=3)
+sched.add_job(talent_scout, 'interval', hours=3)
 
 sched.start()
