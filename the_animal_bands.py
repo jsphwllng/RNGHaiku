@@ -1,6 +1,7 @@
 import random
 import tweepy
 import emoji
+import creds
 
 animals = [":racehorse:", ":sheep:", ":monkey:", ":bug:", ":turtle:", ":camel:", ":elephant:", ":honeybee:", ":snake:", ":ant:", ":dolphin:", ":fish:", ":whale2:", ":ram:", ":goat:", ":pig2:", ":rat:", ":tiger2:", ":rabbit2:", ":dog2:", ":ox:", ":dromedary_camel:", ":leopard:", ":poodle:", ":blowfish:", ":water_buffalo:", ":cat2:", ":octopus:"]
 instruments = [":microphone:", ":trumpet:", ":saxophone:", ":guitar:", ":violin:", ":mega:", ":musical_keyboard:"]
@@ -12,10 +13,10 @@ the_band_name = "\n              The " + random.choice(band_name_1) + " " + rand
 
 
 
-consumer_key = "cQkb9fyBoblzT5sFsin8rrJMp"
-consumer_secret = "UJfaXMs960YNExD3yGpgwjjqAgvUoOi9pR9Iyhuie9AjGjLxSQ"
-access_token = "1251862586120863746-FAGWtXltNWBY7JKQyznfVtOxjOwkXM"
-access_token_secret = "4Sv4ZVgasOdktgQFgLa9UeKQ4btfPFhEbKmrshI9gmrdC"
+consumer_key = creds.consumer_key
+consumer_secret = creds.consumer_secret
+access_token = creds.access_token
+access_token_secret = creds.access_token_secret
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
