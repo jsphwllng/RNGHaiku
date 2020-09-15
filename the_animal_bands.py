@@ -11,7 +11,7 @@ the_boys = ""
 the_band_name = "\n              The " + random.choice(band_name_1) + " " + random.choice(band_name_2)
 
 
-
+#odd
 
 def publictweet(tweet):
 	consumer_key = "cQkb9fyBoblzT5sFsin8rrJMp"
