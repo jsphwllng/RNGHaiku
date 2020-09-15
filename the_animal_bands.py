@@ -23,7 +23,7 @@ api = tweepy.API(auth)
 def publictweet():
     tweet = the_boys + the_band_name
     api.update_status(tweet)
-
+# test
 def talent_scout():
     bandmates = random.randrange(2, 6)
     bandassemble = []
