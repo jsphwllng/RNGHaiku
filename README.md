@@ -8,3 +8,10 @@
 <hr>
 <p>Deployed using </p>
 <a href="https://www.heroku.com">Heroku</a> and <a href="https://www.tweepy.com">tweepy.</a>
+
+<hr>
+<h3>History:</h3>
+<h5>Version 1.0 - April 12th 2020</h5>
+<p>Initial commit, needlessly long files and relied on a local server to update.</p>
+<h5>Version 1.1 - September 15th 2020</h5>
+<p>Cleaned up code significantly and now using heroku as PaaS meaning my computer won't randomly turn on...</p>
