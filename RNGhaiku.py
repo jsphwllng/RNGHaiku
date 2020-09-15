@@ -43,10 +43,10 @@ def tweet_haiku():
 
 	print(completed_haiku)
 
-	consumer_key = "moSinewNqmGJ6Sq8oVUPCPcsa"
-	consumer_secret = "C6Dl8LF5L6ZCX4jqT4BrY1V7OlLrkeZ07U32ZceGlv02yVtOgt"
-	access_token = "1250184561050423302-lCSbevposK3tFo0SAU2jRkQZ3ROBa4"
-	access_token_secret = "q9vGQSDrykrabHOjhSj1AuXzx9qWqoeGbSloMZIdsdDxm"
+	consumer_key = creds.consumer_key
+	consumer_secret = creds.consumer_secret
+	access_token = creds.access_token
+	access_token_secret = creds.access_token_secret
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
 	api = tweepy.API(auth)

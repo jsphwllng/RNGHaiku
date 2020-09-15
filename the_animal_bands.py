@@ -1,6 +1,7 @@
 import random
 import tweepy
 import emoji
+import creds
 
 animals = [":racehorse:", ":sheep:", ":monkey:", ":bug:", ":turtle:", ":camel:", ":elephant:", ":honeybee:", ":snake:", ":ant:", ":dolphin:", ":fish:", ":whale2:", ":ram:", ":goat:", ":pig2:", ":rat:", ":tiger2:", ":rabbit2:", ":dog2:", ":ox:", ":dromedary_camel:", ":leopard:", ":poodle:", ":blowfish:", ":water_buffalo:", ":cat2:", ":octopus:"]
 instruments = [":microphone:", ":trumpet:", ":saxophone:", ":guitar:", ":violin:", ":mega:", ":musical_keyboard:"]
@@ -12,31 +13,31 @@ the_band_name = "\n              The " + random.choice(band_name_1) + " " + rand
 
 
 
-consumer_key = "cQkb9fyBoblzT5sFsin8rrJMp"
-consumer_secret = "UJfaXMs960YNExD3yGpgwjjqAgvUoOi9pR9Iyhuie9AjGjLxSQ"
-access_token = "1251862586120863746-FAGWtXltNWBY7JKQyznfVtOxjOwkXM"
-access_token_secret = "4Sv4ZVgasOdktgQFgLa9UeKQ4btfPFhEbKmrshI9gmrdC"
+consumer_key2 = creds.consumer_key
+consumer_secret2 = creds.consumer_secret
+access_token2 = creds.access_token
+access_token_secret2 = creds.access_token_secret
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def publictweet():
-    tweet = the_boys + the_band_name
-    api.update_status(tweet)
+	tweet = the_boys + the_band_name
+	api.update_status(tweet)
 
-def talent_scout():
-    bandmates = random.randrange(2, 6)
-    bandassemble = []
-    global the_boys
-    while bandmates > 0:
-        instrument_emoji = emoji.emojize(random.choice(instruments), use_aliases=True)
-        animal_emoji = emoji.emojize(random.choice(animals), use_aliases=True)
-        if instrument_emoji == emoji.emojize(":beer:") and emoji.emojize(":beer:") in bandassemble:
-            instrument_emoji = ":saxophone:"
-        else:
-            bandassemble.append(instrument_emoji)
-            bandassemble.append(animal_emoji)
-            bandassemble.append("  ")
-            the_boys = ''.join(bandassemble)
-            bandmates-=1
-	publictweet()
+	def talent_scout():
+		bandmates = random.randrange(2, 6)
+		bandassemble = []
+		global the_boys
+		while bandmates > 0:
+			instrument_emoji = emoji.emojize(random.choice(instruments), use_aliases=True)
+			animal_emoji = emoji.emojize(random.choice(animals), use_aliases=True)
+			if instrument_emoji == emoji.emojize(":beer:") and emoji.emojize(":beer:") in bandassemble:
+				instrument_emoji = ":saxophone:"
+			else:
+				bandassemble.append(instrument_emoji)
+				bandassemble.append(animal_emoji)
+				bandassemble.append("  ")
+				the_boys = ''.join(bandassemble)
+				bandmates-=1
+				publictweet()
