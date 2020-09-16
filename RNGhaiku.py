@@ -1,6 +1,7 @@
 import random
 import tweepy
 from words import words
+import creds
 
 def syllable_count(word):
 	word = word.lower()
@@ -32,17 +33,6 @@ def make_haiku(allowed_syllables):
 			count += syllable_count(chosen_word)
 	return haiku
 
-def publictweet(tweet):
-	consumer_key = "moSinewNqmGJ6Sq8oVUPCPcsa"
-	consumer_secret = "C6Dl8LF5L6ZCX4jqT4BrY1V7OlLrkeZ07U32ZceGlv02yVtOgt"
-	access_token = "1250184561050423302-lCSbevposK3tFo0SAU2jRkQZ3ROBa4"
-	access_token_secret = "q9vGQSDrykrabHOjhSj1AuXzx9qWqoeGbSloMZIdsdDxm"
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_token, access_token_secret)
-	api = tweepy.API(auth)
-	api.update_status(tweet)
-	
-
 def tweet_haiku():
 
 	first_line = make_haiku(5)
@@ -52,4 +42,23 @@ def tweet_haiku():
 	completed_haiku = first_line + "\n    " + second_line + "\n" + third_line
 
 	print(completed_haiku)
-	publictweet(completed_haiku)
+
+	consumer_key = creds.consumer_key
+	consumer_secret = creds.consumer_secret
+	access_token = creds.access_token
+	access_token_secret = creds.access_token_secret
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth.set_access_token(access_token, access_token_secret)
+	api = tweepy.API(auth)
+# test
+	try:
+	    api.verify_credentials()
+	    print("Authentication OK")
+	except:
+	    print("Error during authentication")
+
+	def publictweet():
+
+	    api.update_status(completed_haiku)
+
+	publictweet()

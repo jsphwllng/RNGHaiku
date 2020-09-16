@@ -12,15 +12,15 @@ band_name_2 = ["Beasts", "Birds", "Walkers", "Roamers", "Surfers", "Boys", "Girl
 #odd
 
 def publictweet(tweet):
-	consumer_key = "cQkb9fyBoblzT5sFsin8rrJMp"
-	consumer_secret = "UJfaXMs960YNExD3yGpgwjjqAgvUoOi9pR9Iyhuie9AjGjLxSQ"
-	access_token = "1251862586120863746-FAGWtXltNWBY7JKQyznfVtOxjOwkXM"
-	access_token_secret = "4Sv4ZVgasOdktgQFgLa9UeKQ4btfPFhEbKmrshI9gmrdC"
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_token, access_token_secret)
-	api = tweepy.API(auth)
-	api.update_status(tweet)
-	print(tweet)
+    consumer_key = creds.consumer_key
+    consumer_secret = creds.consumer_secret
+    access_token = creds.access_token
+    access_token_secret = creds.access_token_secret
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth)
+    api.update_status(tweet)
+    print(tweet)
 # test
 def talent_scout():
     the_boys = ""
